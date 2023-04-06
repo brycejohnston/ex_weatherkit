@@ -7,10 +7,10 @@ defmodule ExWeatherkit do
   Get current weather for a latitude and longitude.
 
   ## Parameters
-    - lat: The latitude of the location to check the weather.
-    - lng: The longitude of the location to check the weather.
-    - lang: The language to get a localized response in. Default: English
-    - tz: The timezone the server response should use. Default: UTC
+    - lat: The latitude of the desired location
+    - lng: The longitude of the desired location
+    - lang: The language tag to use for localizing responses
+    - tz: The name of the timezone to use for rolling up weather forecasts into daily forecasts
 
   ## Example:
       iex> ExWeatherkit.current_weather(39.183608, -96.571669)
@@ -24,10 +24,10 @@ defmodule ExWeatherkit do
   Get daily forecast for a latitude and longitude.
 
   ## Parameters
-    - lat: The latitude of the location to check the weather.
-    - lng: The longitude of the location to check the weather.
-    - lang: The language to get a localized response in. Default: English
-    - tz: The timezone the server response should use. Default: UTC
+    - lat: The latitude of the desired location
+    - lng: The longitude of the desired location
+    - lang: The language tag to use for localizing responses
+    - tz: The name of the timezone to use for rolling up weather forecasts into daily forecasts
 
   ## Example:
       iex> ExWeatherkit.forecast_daily(39.183608, -96.571669)
@@ -41,10 +41,10 @@ defmodule ExWeatherkit do
   Get hourly forecast for a latitude and longitude.
 
   ## Parameters
-    - lat: The latitude of the location to check the weather.
-    - lng: The longitude of the location to check the weather.
-    - lang: The language to get a localized response in. Default: English
-    - tz: The timezone the server response should use. Default: UTC
+    - lat: The latitude of the desired location
+    - lng: The longitude of the desired location
+    - lang: The language tag to use for localizing responses
+    - tz: The name of the timezone to use for rolling up weather forecasts into daily forecasts
 
   ## Example:
       iex> ExWeatherkit.forecast_hourly(39.183608, -96.571669)
@@ -58,10 +58,10 @@ defmodule ExWeatherkit do
   Get next hour forecast for a latitude and longitude.
 
   ## Parameters
-    - lat: The latitude of the location to check the weather.
-    - lng: The longitude of the location to check the weather.
-    - lang: The language to get a localized response in. Default: English
-    - tz: The timezone the server response should use. Default: UTC
+    - lat: The latitude of the desired location
+    - lng: The longitude of the desired location
+    - lang: The language tag to use for localizing responses
+    - tz: The name of the timezone to use for rolling up weather forecasts into daily forecasts
 
   ## Example:
       iex> ExWeatherkit.forecast_next_hour(39.183608, -96.571669)
@@ -75,11 +75,11 @@ defmodule ExWeatherkit do
   Get weather alerts for a latitude and longitude.
 
   ## Parameters
-    - lat: The latitude of the location to check the weather.
-    - lng: The longitude of the location to check the weather.
-    - lang: The language to get a localized response in. Default: English
-    - tz: The timezone the server response should use. Default: UTC
-    - country_code: ISO Alpha-2 country code of the requested location. Default: US
+    - lat: The latitude of the desired location
+    - lng: The longitude of the desired location
+    - lang: The language tag to use for localizing responses
+    - tz: The name of the timezone to use for rolling up weather forecasts into daily forecasts
+    - country_code: The ISO Alpha-2 country code for the requested location
 
   ## Example:
       iex> ExWeatherkit.weather_alerts(39.183608, -96.571669)
@@ -93,12 +93,12 @@ defmodule ExWeatherkit do
   Get multiple weather data sets for a latitude and longitude.
 
   ## Parameters
-    - lat: The latitude of the location to check the weather.
-    - lng: The longitude of the location to check the weather.
-    - lang: The language to get a localized response in. Default: English
-    - tz: The timezone the server response should use. Default: UTC
-    - data_sets: A enumerable of the data you're requesting, supported values are: currentWeather, forecastDaily, forecastHourly, forecastNextHour, weatherAlerts. Default: currentWeather
-    - country_code: ISO Alpha-2 country code of the requested location. Default: US
+    - lat: The latitude of the desired location
+    - lng: The longitude of the desired location
+    - lang: The language tag to use for localizing responses
+    - tz: The name of the timezone to use for rolling up weather forecasts into daily forecasts
+    - data_sets: A list of data sets to include in the response, possible values: currentWeather, forecastDaily, forecastHourly, forecastNextHour, weatherAlerts
+    - country_code: The ISO Alpha-2 country code of the requested location
 
   ## Example:
       iex> ExWeatherkit.weather_multi(39.183608, -96.571669, ["currentWeather", "forecastDaily"])
