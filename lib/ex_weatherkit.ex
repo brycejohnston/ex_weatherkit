@@ -1,10 +1,10 @@
 defmodule ExWeatherkit do
   @moduledoc """
-  ExWeatherkit is an Apple WeatherKit API client for Elixir
+  ExWeatherkit is an Apple WeatherKit REST API client for Elixir
   """
 
   @doc """
-  Get current weather for a latitude and longitude.
+  Get current weather for a latitude and longitude
 
   ## Parameters
     - lat: The latitude of the desired location
@@ -21,7 +21,7 @@ defmodule ExWeatherkit do
   end
 
   @doc """
-  Get daily forecast for a latitude and longitude.
+  Get daily forecast for a latitude and longitude
 
   ## Parameters
     - lat: The latitude of the desired location
@@ -38,7 +38,7 @@ defmodule ExWeatherkit do
   end
 
   @doc """
-  Get hourly forecast for a latitude and longitude.
+  Get hourly forecast for a latitude and longitude
 
   ## Parameters
     - lat: The latitude of the desired location
@@ -55,7 +55,7 @@ defmodule ExWeatherkit do
   end
 
   @doc """
-  Get next hour forecast for a latitude and longitude.
+  Get next hour forecast for a latitude and longitude
 
   ## Parameters
     - lat: The latitude of the desired location
@@ -72,7 +72,7 @@ defmodule ExWeatherkit do
   end
 
   @doc """
-  Get weather alerts for a latitude and longitude.
+  Get weather alerts for a latitude and longitude
 
   ## Parameters
     - lat: The latitude of the desired location
@@ -90,7 +90,7 @@ defmodule ExWeatherkit do
   end
 
   @doc """
-  Get multiple weather data sets for a latitude and longitude.
+  Get multiple weather data sets for a latitude and longitude
 
   ## Parameters
     - lat: The latitude of the desired location

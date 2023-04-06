@@ -1,6 +1,11 @@
 # ExWeatherkit
 
-An Apple WeatherKit API client for Elixir
+[![hex.pm](https://img.shields.io/hexpm/v/ex_weatherkit.svg)](https://hex.pm/packages/ex_weatherkit)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/ex_weatherkit/)
+[![hex.pm](https://img.shields.io/hexpm/dt/ex_weatherkit.svg)](https://hex.pm/packages/ex_weatherkit)
+[![hex.pm](https://img.shields.io/hexpm/l/ex_weatherkit.svg)](https://hex.pm/packages/ex_weatherkit)
+
+An Apple WeatherKit REST API client for Elixir
 
 ## Installation
 
@@ -14,7 +19,9 @@ def deps do
 end
 ```
 
-Add the required values to your config file
+You will need an Apple Developer Program membership to [create a private key for WeatherKit access and a Service ID](https://developer.apple.com/documentation/weatherkitrestapi/request_authentication_for_weatherkit_rest_api) to access the WeatherKit REST API.
+
+Once you have those along with your ADP membership Team ID, add the required values to your config file (preferable to load values from env variables)
 
 ```elixir
 config :ex_weatherkit,
@@ -61,4 +68,3 @@ ExWeatherkit.weather_alerts(39.183608, -96.571669)
 ```elixir
 ExWeatherkit.weather_multi(39.183608, -96.571669, ["currentWeather", "forecastDaily"])
 ```
-
