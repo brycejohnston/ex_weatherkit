@@ -7,28 +7,25 @@ defmodule ExWeatherkit.MixProject do
   def project do
     [
       app: :ex_weatherkit,
-      name: "ExWeatherKit",
+      name: "ExWeatherkit",
       version: @version,
       elixir: "~> 1.14",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
-      source_url: "https://github.com/brycejohnston/ex_weatherkit",
-      homepage_url: "https://github.com/brycejohnston/ex_weatherkit",
-      description: "An Apple WeatherKit API client for Elixir",
+      description: "An Apple WeatherKit REST API client for Elixir",
       deps: deps(),
       package: package(),
-      docs: docs()
+      docs: docs(),
+      preferred_cli_env: [docs: :docs]
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
       extra_applications: [:logger]
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:req, "~> 0.3.6"},

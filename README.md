@@ -57,7 +57,7 @@ ExWeatherkit.forecast_hourly(39.183608, -96.571669)
 ExWeatherkit.forecast_next_hour(39.183608, -96.571669)
 ```
 
-### Weather Alerts
+### Weather alerts
 
 ```elixir
 ExWeatherkit.weather_alerts(39.183608, -96.571669)

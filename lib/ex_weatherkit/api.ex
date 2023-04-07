@@ -9,18 +9,35 @@ defmodule ExWeatherkit.API do
 
   defp get(query) do
     headers = build_headers()
-    req = Req.new(base_url: "https://weatherkit.apple.com/api/v1/weather", headers: headers)
-    {:ok, res} = Req.get(req, url: query)
+
+    Req.new(base_url: "https://weatherkit.apple.com/api/v1/weather", headers: headers)
+    |> Req.get(url: query)
+    |> case do
+      {:ok, %{status: status, body: body}} ->
+        {:ok, body, status}
+        |> check_http_errors()
+
+      {:error, %{reason: reason}} ->
+        {:error, reason, nil}
+    end
   end
 
-  defp build_headers() do
+  defp check_http_errors({:ok, body, 200}) do
+    {:ok, body, 200}
+  end
+
+  defp check_http_errors({:ok, body, status}) do
+    {:error, body, status}
+  end
+
+  defp build_headers do
     [
-      {"Authorization", "Bearer #{generate_token()}"},
+      {"Authorization", "Bearer #{get_token()}"},
       {"User-Agent", "ExWeatherkit v#{@version}"}
     ]
   end
 
-  defp generate_token do
+  defp get_token do
     {:ok, token, _} =
       ExWeatherkit.Token.generate_and_sign(
         %{"sub" => Application.fetch_env!(:ex_weatherkit, :service_id)},
