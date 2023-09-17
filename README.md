@@ -25,10 +25,10 @@ Once you have those along with your ADP membership Team ID, add the required val
 
 ```elixir
 config :ex_weatherkit,
-    key_id: "ABCDEF1234"
-    service_id: "com.example.weatherkitclient"
-    team_id: "ZYXWVU8765"
-    private_key: """-----BEGIN PRIVATE KEY-----...."""
+  key_id: "ABCDEF1234"
+  service_id: "com.example.weatherkitclient"
+  team_id: "ZYXWVU8765"
+  private_key: """-----BEGIN PRIVATE KEY-----...."""
 ```
 
 ## Usage

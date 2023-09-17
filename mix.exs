@@ -2,7 +2,7 @@ defmodule ExWeatherkit.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/brycejohnston/ex_weatherkit"
-  @version "0.1.0"
+  @version "0.1.1"
 
   def project do
     [
@@ -28,7 +28,7 @@ defmodule ExWeatherkit.MixProject do
 
   defp deps do
     [
-      {:req, "~> 0.3.6"},
+      {:req, "~> 0.4.3"},
       {:jason, "~> 1.4"},
       {:joken, "~> 2.6"},
       {:ex_doc, "~> 0.29", only: :dev, runtime: false}
