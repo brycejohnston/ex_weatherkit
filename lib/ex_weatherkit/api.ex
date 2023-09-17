@@ -31,10 +31,10 @@ defmodule ExWeatherkit.API do
   end
 
   defp build_headers do
-    [
-      {"Authorization", "Bearer #{get_token()}"},
-      {"User-Agent", "ExWeatherkit v#{@version}"}
-    ]
+    %{
+      "Authorization" => "Bearer #{get_token()}",
+      "User-Agent" => "ExWeatherkit v#{@version}"
+    }
   end
 
   defp get_token do
