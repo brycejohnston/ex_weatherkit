@@ -14,7 +14,7 @@ The package can be installed by adding `ex_weatherkit` to your list of dependenc
 ```elixir
 def deps do
   [
-    {:ex_weatherkit, "~> 0.1.0"}
+    {:ex_weatherkit, "~> 0.1.2"}
   ]
 end
 ```
